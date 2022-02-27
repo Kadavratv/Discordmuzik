@@ -29,27 +29,27 @@ async def cancel(event):
 async def start(event):
   await event.reply("**Etiketleme Botu**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilir ★\nDaha fazla bilgi için **/help**'i tıklayın.",
                     buttons=(
-                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/UserEtigetBot?startgroup=a'),
-                      Button.url('📣 Support', 'https://t.me/Sohbetdestek'),
-                      Button.url('👮‍♂️ Sahibim', 'https://t.me/Mahoaga')]
+                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/discordtagerbot?startgroup=a'),
+                      Button.url('📣 KANAL', 'https://t.me/Discordmuzik'),
+                      Button.url('✨ MÜZİK BOT', 'https://t.me/Discordmuzikbot')]
                     ),
                     link_preview=False
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Mention Tagger Bot'un Yardım Menüsü**\n\nKomut: /all \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. \n`Örnek: /all Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyerek ve /bitir yazarak etiketleme işlemi biter. 🤗"
+  helptext = "**Discord Tagger Bot'un Yardım Menüsü**\n\nKomut: /all \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. \n`Örnek: /all Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyerek ve /bitir yazarak etiketleme işlemi biter. 🤗"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/UserEtigetBot?startgroup=a'),
-                       Button.url('📣 Support', 'https://t.me/Sohbetdestek'),
-                      Button.url('👮‍♂️ Sahibim', 'https://t.me/Mahoaga')]
+                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/DiscordTagerBot?startgroup=a'),
+                       Button.url('📣 Support', 'https://t.me/Discordmuzik'),
+                      Button.url('👮‍♂️ Sahibim', 'https://t.me/Discordmuzikbot')]
                     ),
                     link_preview=False
                    )
 
 @client.on(events.NewMessage(pattern="^/reklam$"))
 async def help(event):
-  helptext = "**Çok özellikleri Etiket Botu Bulmaya Çalışan Grub Sahibleri TaggerBot Size Göre:\n\n📌 5-li etiket\n📌 Emoji etiket\n📌 Tekli Etiket\n📌 Yalnız Yöneticileri etiketleme\n📌\n\n Böyle Çok özellikli TaggerBot 'u grubunuza yönetici olarak ekleyip rahatlıkla üyelir , etiket ata bilirsiz **"
+  helptext = "**Çok özellikleri Etiket Botu Bulmaya Çalışan Grub Sahibleri DiscordTaggerBot Size Göre:\n\n🔰 5-li etiket\n🔰 Emoji etiket\n🔰 Tekli Etiket\n🔰 Yalnız Yöneticileri etiketleme\n📌Discord Sunucusu arayanlara @DiscordMuzik\n\n Böyle Çok özellikli DiscordTaggerBot 'u grubunuza yönetici olarak ekleyip rahatlıkla üyelir , etiket ata bilirsiz **"
   await event.reply(helptext,
                     buttons=(
                       [Button.url('Botu Gruba Ekle➕', 'https://t.me/UserEtigetBot?startgroup=a')],
@@ -87,9 +87,9 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("**Geçmiş mesajlar için etiket ede bilmiom**")
+        return await event.respond("**Geçmiş mesajlar için etiketleme işlemi geçersizdir ♥️**")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("Etiket Yapmak için sebeb yok❗️")
+    return await event.respond("Etiket Yapmak için sebeb yazın❗️")
   else:
     return await event.respond("**Etikete Başlamak için sebeb yazın...!**")
   
@@ -119,7 +119,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{random.choice(emoji)}](tg://user?id={usr.id}) "
       if event.chat_id not in anlik_calisan:
-        await event.respond("Işlem Başarıyla Durduruldu\n\n**Buda sizin reklamınız ola bilir @umutyolculuk**❌")
+        await event.respond("Işlem Başarıyla Durduruldu\n\n**Buda sizin reklamınız ola bilir @DiscordMuzik**❌")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
@@ -167,7 +167,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"🌀 - [{usr.first_name}](tg://user?id={usr.id}) \n"
       if event.chat_id not in anlik_calisan:
-        await event.respond("Işlem Başarıyla Durduruldu\n\n**Buda sizin reklamınız ola bilir @umutyolculuk**❌")
+        await event.respond("Işlem Başarıyla Durduruldu\n\n**Buda sizin reklamınız ola bilir @discordmuzik**❌")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
@@ -284,5 +284,5 @@ async def mentionall(tagadmin):
 		sleep(0.5)
 
 
-print(">> Bot çalıyor merak etme 🚀 @Mahoaga bilgi alabilirsin <<")
+print(">> Bot çalıyor merak etme 🚀 @DiscordMusic bilgi alabilirsin <<")
 client.run_until_disconnected()
