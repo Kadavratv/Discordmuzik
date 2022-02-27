@@ -42,7 +42,7 @@ async def help(event):
                     buttons=(
                       [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/DiscordTagerBot?startgroup=a'),
                        Button.url('📣 Support', 'https://t.me/Discordmuzik'),
-                      Button.url('👮‍♂️ Sahibim', 'https://t.me/Discordmuzikbot')]
+                      Button.url('🥺 Müzik Bot', 'https://t.me/Discordmuzikbot')]
                     ),
                     link_preview=False
                    )
@@ -52,7 +52,7 @@ async def help(event):
   helptext = "**Çok özellikleri Etiket Botu Bulmaya Çalışan Grub Sahibleri DiscordTaggerBot Size Göre:\n\n🔰 5-li etiket\n🔰 Emoji etiket\n🔰 Tekli Etiket\n🔰 Yalnız Yöneticileri etiketleme\n📌Discord Sunucusu arayanlara @DiscordMuzik\n\n Böyle Çok özellikli DiscordTaggerBot 'u grubunuza yönetici olarak ekleyip rahatlıkla üyelir , etiket ata bilirsiz **"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('Botu Gruba Ekle➕', 'https://t.me/UserEtigetBot?startgroup=a')],
+                      [Button.url('Botu Gruba Ekle➕', 'https://t.me/DiscordTagerBot?startgroup=a')],
                     ),
                     link_preview=False
                    )
